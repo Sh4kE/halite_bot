@@ -85,6 +85,9 @@ while True:
                 for planet in planets_by_distance:
                     if not planet.is_owned() or \
                             (len(planet.all_docked_ships()) <= current_maximum_docked_ships and planet.is_owned_by(game_map.get_me())):
+
+                        if game_round <= 12 and planet in planets_moving_to:
+                            continue
                         move_or_dock_to_planet(planet)
                         target_found = True
                         break
