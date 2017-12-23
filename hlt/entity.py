@@ -134,6 +134,9 @@ class Planet(Entity):
         """
         return self.owner is not None
 
+    def is_owned_by(self, player):
+        return self.owner == player
+
     def is_full(self):
         """
         Determines if the planet has been fully occupied (all possible ships are docked)
